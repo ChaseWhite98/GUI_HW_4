@@ -1,0 +1,71 @@
+/*
+Chase White
+Chase_white@student.uml.edu
+GUI I:  HW 4 multiplcation table:  CSS file
+6/22/22
+*/
+
+
+/* changes to classes section, mostly just a lot of spacing mods */
+
+.row{
+	margin: 2em;
+}
+
+.border{
+	padding: 1em;	
+}
+
+/* default color of alert is hidden until input error is made */
+.alert{
+	margin-top: 1em;
+	background-color: white;
+	border-color: white;
+}
+
+.validate_msg{
+	padding: 8px;
+	color: red;
+	border: 1px solid red;
+	text-align: center;
+}
+
+.btn{
+	margin-top: 20px;
+}
+
+.slider{
+	margin: 20px 0px;
+}
+
+label{
+	margin-top: 20px;
+}
+
+legend{
+	font-weight: bold;
+}
+
+/* every other row is gray for readability */
+tr:nth-child(odd){
+	background-color: lightgray;
+}
+
+/* first row is white text on black, overrides previous modifier above */
+tr:first-child{
+	background-color: black;
+	color: white;
+}
+
+/* making the table look like a grid */
+td{
+	text-align: right;
+	padding: 4px;
+	border: 2px solid black;
+}
+
+/* first column is white text on black */
+td:nth-child(-n+1){
+	background-color: black;
+	color: white;
+}
