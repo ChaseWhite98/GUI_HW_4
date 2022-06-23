@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--
+    Name:     Chase White (01735254)
+    Email:    chgase_white@student.uml.edu
+    File:     index.html
+    Created:  06/22/22
+    Desc:     Multiplication table created using JS, jQuery validation plugin, jQuery UI elements, styled with Bootstrap. Pulls start and end for column and row, generates table in real-time with changes, and displays it neatly below the form. Handles ranges -20 to 20 (right now)
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multiplication Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <!-- header section, not much to see here, big title in blue -->
+    <div class="container">
+        <div class="row mt-4 p-5 bg-primary text-white rounded" id="head_section">
+                <header class="col text-center">
+                    <h1 class="display-4">Multiplication Table</h1>
+                </header>
+        </div>
+    </div>
+    
+    <!-- entry form section -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <fieldset class="border">
+                    <legend>Enter Table Ranges</legend>
+                    <form class="form-horizontal" id="entry_form">
+                        <!-- min column text input -->
+                        <div class="form-group">
+                            <label class="control-label" for="mincol">Minimum Column Value</label>
+                            <input type="number" class="form-control" id="mincol" placeholder="Range [ -50 to 50 ] ..." name="mincol">
+                        </div>
+                        <!-- max column text input -->
+                        <div class="form-group">
+                            <label for="maxcol">Maximum Column Value</label>
+                            <input type="number" class="form-control" id="maxcol" placeholder="Range [ -50 to 50 ] ..." name="maxcol">
+                        </div>
+                        <!-- slider for columns -->
+                        <div class="slider" id="slider_col"></div>
+                        
+                        <!-- min row text input -->
+                        <div class="form-group">
+                            <label for="minrow">Minimum Row Value</label>
+                            <input type="number" class="form-control" id="minrow" placeholder="Range [ -50 to 50 ] ..." name="minrow">
+                        </div>
+                        <!-- max row text input -->
+                        <div class="form-group">
+                            <label for="maxrow">Maximum Row Value</label>
+                            <input type="number" class="form-control" id="maxrow" placeholder="Range [ -50 to 50 ] ..." name="maxrow">
+                        </div>
+                        <!-- slider for rows -->
+                        <div class="slider" id="slider_row"></div>
+                    </form>
+                    <button class="p-3 btn btn-primary col-sm-8" onclick="make_tab()">Save current table to new tab</button>
+                    <button class="p-3 btn btn-warning col-sm-3" onclick="delete_tabs()">Delete all tabs</button>
+                        
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <!-- spot to be filled by JS function w/ generated table -->
+            <div class="col-sm-9" id="multi_table"></div>
+        </div>
+        <div class="row">
+            <div id="table_tabs">
+                <ul id="tabs_ul"></ul>
+            </div>
+        </div>
+        <!-- footer section for CR -->
+        <div class="row">
+            <footer class="col">
+                <h6>Copyright &copy; 2022 Chase White</h5>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
